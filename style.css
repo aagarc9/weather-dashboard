@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    background: linear-gradient(45deg, red, blue);
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+}
+
+.citySearch {
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    margin: 10px;
+    padding: 5px;  
+}
+
+.input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#btn {
+    background-color: cornflowerblue;
+    color: cornsilk;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.history {
+    outline: crimson 1px solid;
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    height: 400px;
+    margin: 10px;
+}
+
+.weather {
+    outline: solid 1px red;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    float: right;
+    margin: 0;
+}

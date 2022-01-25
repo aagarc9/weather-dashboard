@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Box Styling</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+
+<body>
+    <header>
+        <div class="header">Weather Dashboard</div>
+    </header>
+    <div class="citySearch">
+        <h2>Search for a City:</h2>
+        <input class="input" type="text" placeholder="San Diego">
+        <button id="btn">Search</button>
+    </div>
+    <div class="history">
+        <div id="output"></div>
+    </div>
+    <div class="weather">
+        <div class ="displayBox">
+            <h2>City</h2>
+            <ul>
+            <li id="temp">temp</li>
+            <li id="wind">wind</li>
+            <li id="humidity">humidity</li>
+            <li id="uvindex">uvindex</li>
+            </ul>
+        </div>
+    
+        <div class="forecast">
+            <h3>5-day forecast</h3>
+            <div class="box1">date</div>
+            <div class="box2">date</div>
+            <div class="box3">date</div>
+            <div class="box4">date</div>
+            <div class="box5">date</div>
+        </div>
+    </div>
+</body>
