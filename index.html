@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSS Box Styling</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css"/>
   </head>
 
@@ -15,7 +15,7 @@
     <section class ="section1">
         <div class="citySearch">
             <h2>Search for a City:</h2>
-             <input class="input" type="text" placeholder="San Diego">
+             <input class="search-bar" type="text" placeholder="San Diego">
              <button id="btn">Search</button>
         </div>
         
@@ -25,7 +25,7 @@
     </section>
     <section class="section2">
         <div class ="displayBox">
-            <h2>City(MM/DD/YYYY)</h2>
+            <h2 id="main-city">City(MM/DD/YYYY)</h2>
             <ul>
             <li id="temp">temp</li>
             <li id="wind">wind</li>
@@ -36,12 +36,13 @@
     
         <div class="forecast">
             <h3>5-day forecast</h3>
-            <div class="box">date</div>
-            <div class="box">date</div>
-            <div class="box">date</div>
-            <div class="box">date</div>
-            <div class="box">date</div>
+            <div id="box1">date</div>
+            <div id="box2">date</div>
+            <div id="box3">date</div>
+            <div id="box4">date</div>
+            <div id="box5">date</div>
         </div>
     </section>
     </main>
+    <script src="script.js"></script>
 </body>

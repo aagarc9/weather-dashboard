@@ -29,16 +29,16 @@ body {
 }
 
 .citySearch {
-    outline: red 1px solid;
     margin: 5px;
     padding: 5px; 
     display: flex;
     flex-direction: column; 
 }
 
-.input {
+.search-bar {
     padding: 10px;
     margin-bottom: 10px;
+    margin-bottom: 5px;
     border-radius: 5px;
 }
 
@@ -49,6 +49,9 @@ body {
     border-radius: 5px;
 }
 
+#btn:hover {
+    background-color: blue;
+}
 .history {
     border-top: grey 2px solid;
     height: 400px;
@@ -67,7 +70,7 @@ body {
 .displayBox {
     border: solid 2px black;
     padding-left: 10px;
-    height: 260px;
+    height: 270px;
 }
 
 .displayBox h2 {
