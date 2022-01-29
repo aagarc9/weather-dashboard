@@ -70,11 +70,17 @@ body {
 .displayBox {
     border: solid 2px black;
     padding-left: 10px;
-    height: 270px;
+    height: 320px;
+    padding-left: 80px;
 }
 
 .displayBox h2 {
-    padding: 10px;
+    padding: 5px;
+}
+
+span {
+    padding: 0;
+    font-size: 24px;
 }
 
 ul { 

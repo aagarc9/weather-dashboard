@@ -1,7 +1,13 @@
 //DOM element refs
-let citySearch = document.getElementsByClassName("search-bar");
-let searchButton = document.getElementById("btn");
-let searchHistory = document.getElementById("output");
+var searchBar = document.getElementsByClassName("search-bar");
+var searchButton = document.getElementById("btn");
+var searchHistory = document.getElementById("output");
+var displayCity = document.getElementById('main-city');
+var displayTime = document.getElementById("date")
+var tempMain = document.getElementById("temp"); 
+var windMain = document.getElementById("wind");
+var humidityMain = document.getElementById("humidity");
+var uvindex = document.getElementById("uvindex");
 
 var searchHistoryArray = [];
 var rootURL = 'https://api.openweathermap.org';
@@ -39,6 +45,9 @@ function saveToLocal(search){
 // }
 // work on local storage
 
+var currentDate = moment();
+$("#date").text(currentDate.format("(MM/DD/YYYY)"));
+
 function fetchApiCoords(city) {
     var apiURL = rootURL + "/data/2.5/weather?q=" + city + "&appid=" + apiKey;
     fetch(apiURL)
@@ -46,15 +55,31 @@ function fetchApiCoords(city) {
             return response.json()
         })
         .then(function (data) {
+            console.log(data)
             // create a variable to grab data for the lat and lon
             var lon = data.coord.lon;
             var lat = data.coord.lat;
+
+            displayCity.innerHTML = data.name;
             
             var mainURL = rootURL +"/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + apiKey;
             fetch(mainURL)
-            
+            .then(function (response) {
+                return response.json()
+            })
+            .then (function (data) {
+                console.log(data)
+                showWeather(data)
+            })
         })
         
 };   
 
-fetchApiCoords('Irvine')
+function showWeather(data) {
+    tempMain.innerHTML = data.current.temp;
+    windMain.innerHTML = data.current.wind_speed;
+    humidityMain.innerHTML = data.current.humidity;
+    uvindex.innerHTML = data.current.uvi;
+}
+
+fetchApiCoords('albuquerque')
