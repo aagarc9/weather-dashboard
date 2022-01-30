@@ -1,5 +1,5 @@
 //DOM element refs
-var searchBar = document.getElementsByClassName("search-bar");
+var searchBar = document.getElementById("search-bar");
 var searchButton = document.getElementById("btn");
 var searchHistory = document.getElementById("output");
 var displayCity = document.getElementById('main-city');
@@ -12,6 +12,14 @@ var uvindex = document.getElementById("uvindex");
 var searchHistoryArray = [];
 var rootURL = 'https://api.openweathermap.org';
 var apiKey = 'a4320e7ddf4416fbab75f470420a3965'
+
+searchButton.addEventListener('click', searchInput)
+
+function searchInput() {
+    var text = searchBar.value
+    console.log(text)
+    
+}
 
 
 function searchHistoryRender() {
@@ -35,15 +43,6 @@ function saveToLocal(search){
 
 // create a function to display search history. 
 // button.addEventListener('click', displayCity)
-
-// function displayCity() {
-//     let cityName = cityInput.value;
-//     searchHistory.innerHTML = cityName
-//  console.log(cityName)
-
-//     localStorage.setItem('city', cityName)
-// }
-// work on local storage
 
 var currentDate = moment();
 $("#date").text(currentDate.format("(MM/DD/YYYY)"));
@@ -82,4 +81,4 @@ function showWeather(data) {
     uvindex.innerHTML = data.current.uvi;
 }
 
-fetchApiCoords('albuquerque')
+fetchApiCoords('london')
