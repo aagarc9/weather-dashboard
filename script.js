@@ -9,6 +9,31 @@ var windMain = document.getElementById("wind");
 var humidityMain = document.getElementById("humidity");
 var uvindex = document.getElementById("uvindex");
 
+var temp1 = document.getElementById("temp1"); 
+var wind1 = document.getElementById("wind1");
+var humidity1 = document.getElementById("humidity1");
+var date1 = document.getElementById("date1");
+
+var temp2 = document.getElementById("temp2"); 
+var wind2 = document.getElementById("wind2");
+var humidity2 = document.getElementById("humidity2");
+var date2 = document.getElementById("date2");
+
+var temp3 = document.getElementById("temp3"); 
+var wind3 = document.getElementById("wind3");
+var humidity3 = document.getElementById("humidity3");
+var date3 = document.getElementById("date3");
+
+var temp4 = document.getElementById("temp4"); 
+var wind4 = document.getElementById("wind4");
+var humidity4 = document.getElementById("humidity4");
+var date4 = document.getElementById("date4");
+
+var temp5 = document.getElementById("temp5"); 
+var wind5 = document.getElementById("wind5");
+var humidity5 = document.getElementById("humidity5");
+var date5 = document.getElementById("date5");
+
 var searchHistoryArray = [];
 var rootURL = 'https://api.openweathermap.org';
 var apiKey = 'a4320e7ddf4416fbab75f470420a3965'
@@ -75,10 +100,12 @@ function fetchApiCoords(city) {
 };   
 
 function showWeather(data) {
-    tempMain.innerHTML = data.current.temp;
-    windMain.innerHTML = data.current.wind_speed;
-    humidityMain.innerHTML = data.current.humidity;
-    uvindex.innerHTML = data.current.uvi;
+    tempMain.innerHTML = " Temp: " + data.current.temp + " F";
+    windMain.innerHTML = "Wind: " + data.current.wind_speed + " MPH";
+    humidityMain.innerHTML = " Humidity: " + data.current.humidity + " %";
+    uvindex.innerHTML = " UV index: " + data.current.uvi + "";
+
+
 }
 
 fetchApiCoords('london')
