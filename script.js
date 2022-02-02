@@ -40,10 +40,9 @@ var apiKey = 'a4320e7ddf4416fbab75f470420a3965'
 
 searchButton.addEventListener('click', function(event) {
     event.preventDefault();
-    var citySearch = searchBar.value.trim();
-    // savedCity.push(citySearch);
-    localStorage.setItem('search-history', JSON.stringify(citySearch));
-    fetchApiCoords(citySearch);
+    var searchHistoryArray = searchBar.value.trim();
+    localStorage.setItem('search-history', JSON.stringify(searchHistoryArray));
+    fetchApiCoords(searchHistoryArray);
     searchHistoryRender()
 });
 
@@ -51,7 +50,6 @@ var savedCity = JSON.parse(localStorage.getItem("search-history"))
 
 function searchHistoryRender() {
     searchHistory.innerHTML ='';
-    var savedCity = JSON.parse(localStorage.getItem("search-history"))
     savedCity = searchHistoryArray
     for (var i = 0; i <= searchHistoryArray.length; i++) {
         var btn = document.createElement('button')
@@ -109,28 +107,28 @@ function showWeather(data) {
     uvindex.innerHTML = " UV index: " + data.current.uvi + "";
 
     $("#date1").text(moment().add(1, "days").format("(MM/DD/YYYY)"))
-    temp1.innerHTML = data.daily[1].temp.max;
-    wind1.innerHTML = data.daily[1].wind_speed;
-    humidity1.innerHTML = data.daily[1].humidity;
+    temp1.innerHTML = " Temp: " + data.daily[1].temp.max + " F";
+    wind1.innerHTML = " Wind: " + data.daily[1].wind_speed + " MPH";
+    humidity1.innerHTML = " Humidity: " + data.daily[1].humidity + " %";
 
     $("#date2").text(moment().add(2, "days").format("(MM/DD/YYYY)"))
-    temp2.innerHTML = data.daily[2].temp.max;
-    wind2.innerHTML = data.daily[2].wind_speed;
-    humidity2.innerHTML = data.daily[2].humidity;
+    temp2.innerHTML = " Temp: " + data.daily[2].temp.max + " F";
+    wind2.innerHTML = " Wind: " + data.daily[2].wind_speed + " MPH";
+    humidity2.innerHTML = " Humidity: " + data.daily[2].humidity + " %";
 
     $("#date3").text(moment().add(3, "days").format("(MM/DD/YYYY)"))
-    temp3.innerHTML = data.daily[3].temp.max;
-    wind3.innerHTML = data.daily[3].wind_speed;
-    humidity3.innerHTML = data.daily[3].humidity;
+    temp3.innerHTML = " Temp: " + data.daily[3].temp.max + " F";
+    wind3.innerHTML = " Wind: " + data.daily[3].wind_speed + " MPH";
+    humidity3.innerHTML = " Humidity: " + data.daily[3].humidity + " %";
 
     $("#date4").text(moment().add(4, "days").format("(MM/DD/YYYY)"))
-    temp4.innerHTML = data.daily[4].temp.max;
-    wind4.innerHTML = data.daily[4].wind_speed;
-    humidity4.innerHTML = data.daily[4].humidity;
+    temp4.innerHTML = " Temp: " + data.daily[4].temp.max + " F";
+    wind4.innerHTML = " Wind: " + data.daily[4].wind_speed + " MPH";
+    humidity4.innerHTML = " Humidity: " + data.daily[4].humidity + " %";
 
     $("#date5").text(moment().add(5, "days").format("(MM/DD/YYYY)"))
-    temp5.innerHTML = data.daily[5].temp.max;
-    wind5.innerHTML = data.daily[5].wind_speed;
-    humidity5.innerHTML = data.daily[5].humidity;
+    temp5.innerHTML = " Temp: " + data.daily[5].temp.max + " F";
+    wind5.innerHTML = " Wind: " + data.daily[5].wind_speed + " MPH";
+    humidity5.innerHTML = " Humidity: " + data.daily[5].humidity + " %";
 }
 

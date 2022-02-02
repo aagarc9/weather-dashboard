@@ -97,11 +97,16 @@ li {
     background: darkblue;
     color: white;
     margin: 20px;
-    padding: 2px;
+    padding: 20px;
     width: 175px;
     height: 180px;
 }
 
-#output {
-    padding: 5px;
+#temp1, #temp2, #temp3, #temp4, #temp5 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+#humidity1, #humidity2, #humidity3, #humidity4, #humidity5 {
+    margin-top: 10px;
 }
