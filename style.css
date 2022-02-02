@@ -101,3 +101,7 @@ li {
     width: 175px;
     height: 180px;
 }
+
+#output {
+    padding: 5px;
+}

@@ -38,39 +38,42 @@ var searchHistoryArray = [];
 var rootURL = 'https://api.openweathermap.org';
 var apiKey = 'a4320e7ddf4416fbab75f470420a3965'
 
-searchButton.addEventListener('click', searchInput)
+searchButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    var citySearch = searchBar.value.trim();
+    // savedCity.push(citySearch);
+    localStorage.setItem('search-history', JSON.stringify(citySearch));
+    fetchApiCoords(citySearch);
+    searchHistoryRender()
+});
 
-function searchInput() {
-    var text = searchBar.value
-    console.log(text)
-    
-}
-
+var savedCity = JSON.parse(localStorage.getItem("search-history"))
 
 function searchHistoryRender() {
     searchHistory.innerHTML ='';
-    for (var i =searchHistoryArray.length-1; i>=0; i--) {
+    var savedCity = JSON.parse(localStorage.getItem("search-history"))
+    savedCity = searchHistoryArray
+    for (var i = 0; i <= searchHistoryArray.length; i++) {
         var btn = document.createElement('button')
         btn.setAttribute('type', 'button')
-
-        btn.setAttribute('data-search', searchHistoryArray[i]);
         btn.textContent = searchHistoryArray[i];
         searchHistory.append(btn)
     }
 }
 
 // two functions that will do setitem and getitem 
-function saveToLocal(search){
+// function saveToLocal(search){
 
-    searchHistoryArray.push(search)
-    localStorage.setItem('search-history', JSON.stringify(searchHistoryArray))
-}
+//     searchHistoryArray.push(search)
+//     localStorage.setItem('search-history', JSON.stringify(searchHistoryArray))
+// }
 
 // create a function to display search history. 
 // button.addEventListener('click', displayCity)
 
 var currentDate = moment();
 $("#date").text(currentDate.format("(MM/DD/YYYY)"));
+
 
 function fetchApiCoords(city) {
     var apiURL = rootURL + "/data/2.5/weather?q=" + city + "&appid=" + apiKey;
@@ -105,7 +108,29 @@ function showWeather(data) {
     humidityMain.innerHTML = " Humidity: " + data.current.humidity + " %";
     uvindex.innerHTML = " UV index: " + data.current.uvi + "";
 
+    $("#date1").text(moment().add(1, "days").format("(MM/DD/YYYY)"))
+    temp1.innerHTML = data.daily[1].temp.max;
+    wind1.innerHTML = data.daily[1].wind_speed;
+    humidity1.innerHTML = data.daily[1].humidity;
 
+    $("#date2").text(moment().add(2, "days").format("(MM/DD/YYYY)"))
+    temp2.innerHTML = data.daily[2].temp.max;
+    wind2.innerHTML = data.daily[2].wind_speed;
+    humidity2.innerHTML = data.daily[2].humidity;
+
+    $("#date3").text(moment().add(3, "days").format("(MM/DD/YYYY)"))
+    temp3.innerHTML = data.daily[3].temp.max;
+    wind3.innerHTML = data.daily[3].wind_speed;
+    humidity3.innerHTML = data.daily[3].humidity;
+
+    $("#date4").text(moment().add(4, "days").format("(MM/DD/YYYY)"))
+    temp4.innerHTML = data.daily[4].temp.max;
+    wind4.innerHTML = data.daily[4].wind_speed;
+    humidity4.innerHTML = data.daily[4].humidity;
+
+    $("#date5").text(moment().add(5, "days").format("(MM/DD/YYYY)"))
+    temp5.innerHTML = data.daily[5].temp.max;
+    wind5.innerHTML = data.daily[5].wind_speed;
+    humidity5.innerHTML = data.daily[5].humidity;
 }
 
-fetchApiCoords('london')
