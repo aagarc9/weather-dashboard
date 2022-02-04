@@ -51,7 +51,7 @@ searchButton.addEventListener('click', function() {
     searchHistoryArray.push(city);
     localStorage.setItem('search-history', JSON.stringify(searchHistoryArray));
     fetchApiCoords(city);
-    searchHistoryRender()
+    searchHistoryRender();
 });
 
 var savedCity = JSON.parse(localStorage.getItem("search-history"))
@@ -63,8 +63,16 @@ function searchHistoryRender() {
         var btn = document.createElement('button')
         btn.setAttribute('type', 'button')
         btn.textContent = searchHistoryArray[i];
-        searchHistory.append(btn);
+        searchHistory.appendChild(btn);
         
+        for (let i = 0; i <= searchHistory.childElementCount; i++) {
+            if (searchHistory.children.item(i) != null) {
+                searchHistory.children.item(i).addEventListener('click', function () {
+                // searchHistoryArray = searchHistory.children.item(i).textContent
+                fetchApiCoords(searchHistory.children.item(i).textContent);
+               });
+            } 
+        }
     }
 }
 
