@@ -23,3 +23,4 @@ For this week's assignment, I needed to complete a weather dashboard that allows
 
 Links
 https://aagarc9.github.io/weather-dashboard/
+<img width="735" alt="Capture" src="https://user-images.githubusercontent.com/92004832/152651822-c66a97e0-a295-40d9-9fd3-a7f14d138855.PNG">
