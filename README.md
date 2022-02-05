@@ -20,3 +20,6 @@ For this week's assignment, I needed to complete a weather dashboard that allows
 * THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
 * WHEN I click on a city in the search history
 * THEN I am again presented with current and future conditions for that city
+
+Links
+https://aagarc9.github.io/weather-dashboard/
